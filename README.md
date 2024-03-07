@@ -8,7 +8,7 @@
 
 - `CLIENT_ID`: GitHub OAuth应用的客户端ID。
 - `CLIENT_SECRET`: GitHub OAuth应用的客户端密钥。
-- `REDIRECT_URI`: GitHub OAuth应用的重定向URI {YOUR_DOMAIN}/callback。
+- `REDIRECT_URI`: GitHub OAuth应用的重定向URI `{YOUR_DOMAIN:YOUR_PORT}/callback` 。
 - `ORGANIZATION_NAME`: 需要邀请用户加入的GitHub组织名称。
 - `GITHUB_P_ACCESSTOKEN`: 用于邀请用户加入组织的GitHub个人访问令牌。
 
@@ -77,13 +77,14 @@ docker run \
 ## 如何访问
 1. 正常访问之前， 需要在GitHub OAuth应用中设置`REDIRECT_URI`为`http(s){YOUR_DOMAIN:YOUR_PORT}/callback`， 如： `http://127.0.0.1:18989/callback` 。
 2. 访问`http://127.0.0.1:18989`， 你将会看到如下界面：
-   ![login](./assets/home.png)
+   <img src="./assets/home.png" width="600">
 3. 点击`共襄盛举`按钮，你将会被重定向到GitHub的授权页面，授权成功后，你将会被重定向到你设置的`REDIRECT_URI`。
 4. 然后你就可以点击下图中的 `前往使用说明` 按钮， 愉快地开车了。
-   ![login](./assets/almost-success.png)
+   <img src="./assets/almost-success.png" width="600">
 5. 如果你不想加入这个~~团伙~~组织， `不了不了`按钮是专门为你准备的。
-6. 你以为不了不了就不了吗？ 不了不了是不了， 你还是会后悔的，我们给你提供了一个`我后悔了`按钮。
-   ![login](./assets/refuse.png)
+6. 你以为不了不了就不了吗？ 不! 你还是会后悔的，我们给你提供了一个`我后悔了`按钮。
+   <img src="./assets/refuse.png" width="600">
+7. 然后你就又回到了你应该去的地方。
 
 ## 其他说明
 
