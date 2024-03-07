@@ -27,4 +27,5 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: atmudccc/github-org-invite-py:${{ github.ref_name }}
+        tags: atmudccc/github-org-invite-py:${{ github.ref_name }},atmudccc/github-org-invite-py:latest
+        platforms: linux/amd64,linux/arm64
