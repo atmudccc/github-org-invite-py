@@ -8,14 +8,44 @@
 
 - `CLIENT_ID`: GitHub OAuth应用的客户端ID。
 - `CLIENT_SECRET`: GitHub OAuth应用的客户端密钥。
-- `REDIRECT_URI`: GitHub OAuth应用的重定向URI。
+- `REDIRECT_URI`: GitHub OAuth应用的重定向URI {YOUR_DOMAIN}/callback。
 - `ORGANIZATION_NAME`: 需要邀请用户加入的GitHub组织名称。
 - `GITHUB_P_ACCESSTOKEN`: 用于邀请用户加入组织的GitHub个人访问令牌。
+
+## 如何获取上述变量
+1. 创建GitHub OAuth应用
+   1. 登录到你的GitHub账户。
+   2. 点击右上角的头像，然后选择"Settings"。
+   3. 在左侧菜单中，选择"Developer settings"。
+   4. 在左侧菜单中，选择"OAuth Apps"，然后点击"New OAuth App"。
+   5. 在"Application name"字段中，输入你的应用名称,如github-invitor。
+   6. 在"Homepage URL"字段中，输入你的应用主页URL。
+   7. 在"Application description"字段中，输入你的应用描述（可选）。
+   8. 在"Authorization callback URL"字段中，输入你的应用授权回调URL。这应该是你的应用在用户授权后将被重定向到的URL。这个回调地址`REDIRECT_URI`的格式应该是`http(s){YOUR_DOMAIN:YOUR_PORT}/callback`。
+   9. 点击"Register application"。 
+   10. 在创建应用后，你将看到你的`CLIENT_ID`和`CLIENT_SECRET`。 
+2. 创建GitHub组织
+   1. 登录到你的GitHub账户。
+   2. 点击右上角的头像，然后选择"Your organizations"。
+   3. 点击"New organization"。
+   4. 选择组织的计划类型，可以选择免费的"Free"计划，然后点击"Next"。
+   5. 在"Organization account name"字段中，输入你的组织名称`ORGANIZATION_NAME`。
+   6. 在"Contact email"字段中，输入你的联系邮箱。
+   7. 选择你的组织类型，可以是"Business"或"Non-profit"。
+   8. 阅读并接受GitHub的条款，然后点击"Create organization"。
+   9. 如果你需要在创建组织的时候勾选Copilot来来启用Copilot， 需要填写付款信息等。
+3. 创建GitHub个人访问令牌
+   1. 登录有组织管理员权限的GitHub账户（上述你创建组织的账户肯定是有组织管理员权限的）。
+   2. 点击右上角的头像，然后选择"Settings"。
+   3. 在左侧菜单中，选择"Developer settings"。
+   4. 在左侧菜单中，选择"Personal access tokens"，然后点击"Generate new token"。
+   5. 这个token需要有`admin:org`权限，用于邀请用户加入组织。
+   6. 这个token就是`GITHUB_P_ACCESSTOKEN`。
 
 ## 如何启动项目
 
 1. 克隆项目到本地。
-2. 在项目根目录下创建一个`.env`文件，并填写上述环境变量。
+2. 在项目根目录下创建一个`.env`文件，并填写上述步骤中获取到的环境变量。
 3. 安装项目依赖：`pip install -r requirements.txt`。
 4. 启动项目：`python main.py`。
 
