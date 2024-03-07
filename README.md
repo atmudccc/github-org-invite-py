@@ -72,6 +72,25 @@ docker run \
 -d atmudccc/github-org-invite-py:latest
 ```
 
+## 如何使用docker-compose启动
+感谢[华仔](https://linux.do/u/Hua)送出的docker-compose.yml大礼包， 文件可以去这里下载：[docker-compose.yml](docker-compose.yml)
+```shell
+version: "3.3"
+services:
+  github-org-invite-py:
+    image: atmudccc/github-org-invite-py:latest
+    container_name: github-org-invite-py
+    environment:
+      - CLIENT_ID=your_client_id
+      - CLIENT_SECRET=your_client_secret
+      - REDIRECT_URI=your_redirect_uri
+      - ORGANIZATION_NAME=your_organization_name
+      - GITHUB_P_ACCESSTOKEN=your_github_p_accesstoken
+    ports:
+      - 18989:18989
+    restart: always
+```
+
 以上命令将会启动一个Docker容器，应用将在容器的18989端口上运行，并映射到宿主机的18989端口。
 
 ## 如何访问

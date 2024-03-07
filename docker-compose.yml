@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  github-org-invite-py:
+    image: atmudccc/github-org-invite-py:latest
+    container_name: github-org-invite-py
+    environment:
+      - CLIENT_ID=your_client_id
+      - CLIENT_SECRET=your_client_secret
+      - REDIRECT_URI=your_redirect_uri
+      - ORGANIZATION_NAME=your_organization_name
+      - GITHUB_P_ACCESSTOKEN=your_github_p_accesstoken
+    ports:
+      - 18989:18989
+    restart: always
