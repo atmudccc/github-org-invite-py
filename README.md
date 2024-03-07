@@ -77,13 +77,13 @@ docker run \
 ## 如何访问
 1. 正常访问之前， 需要在GitHub OAuth应用中设置`REDIRECT_URI`为`http(s){YOUR_DOMAIN:YOUR_PORT}/callback`， 如： `http://127.0.0.1:18989/callback` 。
 2. 访问`http://127.0.0.1:18989`， 你将会看到如下界面：
-   <img src="./assets/home.png" width="600">
+   <img src="./assets/home.png" width="800">
 3. 点击`共襄盛举`按钮，你将会被重定向到GitHub的授权页面，授权成功后，你将会被重定向到你设置的`REDIRECT_URI`。
 4. 然后你就可以点击下图中的 `前往使用说明` 按钮， 愉快地开车了。
-   <img src="./assets/almost-success.png" width="600">
+   <img src="./assets/almost-success.png" width="800">
 5. 如果你不想加入这个~~团伙~~组织， `不了不了`按钮是专门为你准备的。
 6. 你以为不了不了就不了吗？ 不! 你还是会后悔的，我们给你提供了一个`我后悔了`按钮。
-   <img src="./assets/refuse.png" width="600">
+   <img src="./assets/refuse.png" width="800">
 7. 然后你就又回到了你应该去的地方。
 
 ## 其他说明
