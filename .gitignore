@@ -1,0 +1,6 @@
+nohup.out
+bak/
+**/*.pyc
+.idea
+*.iml
+venv/**
